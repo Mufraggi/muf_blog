@@ -1,8 +1,9 @@
 <template>
   <div>
     <Header/>
-    <p>Some default layout content shared across all pages</p>
-    <slot/>
+    <main class="px-4 py-12 md:px-6 md:py-24">
+      <slot/>
+    </main>
     <Footer/>
   </div>
 
