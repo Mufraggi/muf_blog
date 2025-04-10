@@ -15,9 +15,7 @@
 <script setup lang="ts">
 import NewsLater from "~/components/NewsLater.vue";
 
-const route = useRoute()
-const {data: page} = await useAsyncData(route.path, () => {
-  return queryCollection('tech').path(route.path).first()
-})
-console.log(page)
+const allPosts = await queryCollection('tech').order('date', 'DESC').all()
+
+console.log(allPosts)
 </script>
