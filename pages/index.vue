@@ -15,7 +15,6 @@
 <script setup lang="ts">
 import NewsLater from "~/components/NewsLater.vue";
 
-const allPosts = await queryCollection('tech').order('date', 'DESC').all()
-
-console.log(allPosts)
+const techPosts = await queryCollection('content').all()
+console.log(techPosts)
 </script>
