@@ -1,16 +1,20 @@
 <script setup lang="ts">
-// Définir les props
-defineProps({
+defineProps<{
   post: {
-    type: Object,
-    required: true
+    id: string
+    slug: string
+    path: string
+    title: string
+    excerpt: string
+    date: string
   }
-})
+}>()
 </script>
 
 <template>
   <article :key="post.id" class="border-2 border-black">
-    <div class="aspect-video w-full bg-gray-200"></div>
+    <NuxtLink :to="post.path" class="absolute inset-0" />
+    <div class="aspect-video w-full bg-gray-200"/>
     <div class="p-6">
       <p class="mb-2 text-sm font-bold uppercase">CATEGORY</p>
       <h3 class="mb-4 text-2xl font-bold">{{ post.title || 'Post Title Goes Here With Some Length' }}</h3>
