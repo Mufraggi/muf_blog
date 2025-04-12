@@ -5,7 +5,7 @@ export default defineContentConfig({
     collections: {
         content: defineCollection(   asSeoCollection({
             type: 'page',
-            source: '**/*.md',
+            source: '!tech/**/*.md',
             schema: z.object({
                 title: z.string().min(5),
                 description: z.string().min(10),
@@ -20,10 +20,10 @@ export default defineContentConfig({
                 cover: z.string().url().or(z.string().startsWith("/")), // URL ou chemin local
                 related: z.array(z.string()).optional(),
             })
-        }))
-        ,tech:  defineCollection(   asSeoCollection({
+        })),
+        tech:  defineCollection(   asSeoCollection({
             type: 'page',
-            source: 'tech/*.md',
+            source: 'tech/**/*.md',
             schema: z.object({
                 title: z.string().min(5),
                 description: z.string().min(10),

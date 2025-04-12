@@ -4,9 +4,9 @@
     <section class="mb-24">
       <h2 class="mb-12 text-3xl font-bold uppercase tracking-tighter md:text-5xl">LATEST POSTS</h2>
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <CardArticle v-for="item in [{id:1, title: 'Post 1'}, {id:2, title: 'Post 2'}, {id:3, title: 'Post 3'}]"
-                     :key="item.id"
-                     :post="item"/>
+        <CardArticle v-for="item in latestTechPosts" :key="item._path" :post="item" />
+
+
       </div>
     </section>
     <NewsLater/>
@@ -15,6 +15,23 @@
 <script setup lang="ts">
 import NewsLater from "~/components/NewsLater.vue";
 
-const techPosts = await queryCollection('content').all()
-console.log(techPosts)
+const { data: techPosts, pending, error } = await useAsyncData(
+    "techPosts",
+    () => queryContent("tech").find()
+);
+
+if (pending.value) {
+  console.log("Chargement en cours...");
+}
+
+if (error.value) {
+  console.error("Une erreur est survenue :", error.value);
+}
+
+if (techPosts.value) {
+  console.log("Articles tech récupérés :", techPosts.value);
+  // Ici, techPosts.value contient vos données de la collection "tech"
+} else {
+  console.log("Aucun article tech trouvé.");
+}
 </script>
