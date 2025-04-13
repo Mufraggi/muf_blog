@@ -1,14 +1,23 @@
 ---
-title: "Créer un Middleware d’Authentification avec Actix Web en Rust"
-description: "Apprenez à créer un middleware dans Actix Web pour intercepter et valider un token JWT, tout en découvrant des concepts clés de Rust comme FromRequest, Option, Result et pattern matching."
+title: Créer un Middleware d’Authentification avec Actix Web en Rust
+description: Apprenez à créer un middleware dans Actix Web pour intercepter et
+  valider un token JWT, tout en découvrant des concepts clés de Rust comme
+  FromRequest, Option, Result et pattern matching.
 date: 2022-01-10
-tags: ["rust", "actix-web", "middleware", "jwt", "backend"]
-language: "fr"
-slug: "middleware-auth-actix-web"
-author: "Hugo Mufraggi"
+tags:
+  - rust
+  - actix-web
+  - middleware
+  - jwt
+  - backend
+language: fr
+slug: middleware-auth-actix-web
+author: Hamza Mufraggi
 readingTime: 7
-cover: "/1_o6xFGs6Qw9qAQ8J-lmCrOw.webp"
-related: ["tests-middleware-actix", "guide-debutant-rust"]
+cover: /images/rust-middleware-cover.jpg
+related:
+  - tests-middleware-actix
+  - guide-debutant-rust
 ---
 
 # **Créer un Middleware d’Authentification avec Actix Web en Rust**
@@ -30,7 +39,7 @@ Dans ce tutoriel nous allons implémenter un middleware sur le framework web Act
 - Centraliser tout les logiques liées au middelware dans un seul repository.
 - Réduire la masse de code à tester
 
-Voici le code source du tutoriel: https\://github.com/Mufraggi/middleware\_actix
+Voici le code source du tutoriel: <https://github.com/Mufraggi/middleware_actix>
 
 Petit disclaimer pour me faciliter le développement de middelware j’ai volontairement créé les dossiers models et config. Pour une implémentation complète dans logique micro-service il faudrait que ces deux dossiers soient des packages à importer.
 
@@ -56,8 +65,6 @@ Un trait est un ensemble de méthodes que l'objet sur lequel il est appliqué do
 
 Revenons à notre implémentation du trait FromRequest. Pour cela nous pouvons nous référer à la doc de rust de actix.
 
-
-
 ```rust
 [derive(Debug)]
 pub struct AuthorizationMiddleware;
@@ -78,14 +85,12 @@ La fonction from\_request prend en argument un HttpRequest, et le payload de la 
 
 Dans le cas où le JWT est bon, la fonction retournera un `AuthorizationMiddleware` et dans l’autre cas une `Error`.
 
-
-
 ```rust
 fn from_request(req: &HttpRequest, _payload: &mut Payload) -> Self::Future {
         let auth = req.headers().get("Authorization");
         match auth {
             Some(_) => {
-	            // Todo apply the token checking
+                // Todo apply the token checking
             }
             None => err(ErrorUnauthorized("Blocked"))
         }
@@ -110,6 +115,7 @@ let token = split[1].trim();
 let config: Config = Config {};
 let var = config.get_config_with_key("SECRET_KEY");
 let key = var.as_bytes();
+
 ```
 
 Le reste du code sur cette partie est assez simple je fais une avance rapide jusqu’au match decode::\<Claims>.
