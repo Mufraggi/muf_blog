@@ -5,9 +5,9 @@ date: 2022-01-10
 tags: ["rust", "actix-web", "middleware", "jwt", "backend"]
 language: "fr"
 slug: "middleware-auth-actix-web"
-author: "Hamza Mufraggi"
+author: "Hugo Mufraggi"
 readingTime: 7
-cover: "/images/rust-middleware-cover.jpg"
+cover: "/1_o6xFGs6Qw9qAQ8J-lmCrOw.webp"
 related: ["tests-middleware-actix", "guide-debutant-rust"]
 ---
 
@@ -56,6 +56,8 @@ Un trait est un ensemble de méthodes que l'objet sur lequel il est appliqué do
 
 Revenons à notre implémentation du trait FromRequest. Pour cela nous pouvons nous référer à la doc de rust de actix.
 
+
+
 ```rust
 [derive(Debug)]
 pub struct AuthorizationMiddleware;
@@ -75,6 +77,8 @@ La fonction from\_request prend en argument un HttpRequest, et le payload de la 
 `type Future = Ready<Result<AuthorizationMiddleware, Error>>;`
 
 Dans le cas où le JWT est bon, la fonction retournera un `AuthorizationMiddleware` et dans l’autre cas une `Error`.
+
+
 
 ```rust
 fn from_request(req: &HttpRequest, _payload: &mut Payload) -> Self::Future {
@@ -106,7 +110,6 @@ let token = split[1].trim();
 let config: Config = Config {};
 let var = config.get_config_with_key("SECRET_KEY");
 let key = var.as_bytes();
-
 ```
 
 Le reste du code sur cette partie est assez simple je fais une avance rapide jusqu’au match decode::\<Claims>.
