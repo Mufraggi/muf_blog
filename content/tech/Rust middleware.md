@@ -3,7 +3,7 @@ title: Créer un Middleware d’Authentification avec Actix Web en Rust
 description: Apprenez à créer un middleware dans Actix Web pour intercepter et
   valider un token JWT, tout en découvrant des concepts clés de Rust comme
   FromRequest, Option, Result et pattern matching.
-date: 2022-01-10
+date: 2022-02-18
 tags:
   - rust
   - actix-web
@@ -12,9 +12,9 @@ tags:
   - backend
 language: fr
 slug: middleware-auth-actix-web
-author: Hamza Mufraggi
+author: Hugo Mufraggi
 readingTime: 7
-cover: /images/rust-middleware-cover.jpg
+cover: /1_o6xFGs6Qw9qAQ8J-lmCrOw.webp
 related:
   - tests-middleware-actix
   - guide-debutant-rust

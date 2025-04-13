@@ -1,3 +1,24 @@
+---
+title: "Rust Actix TDD architecture hexagonale part 1"
+description: "Introduction à l'architecture hexagonale en Rust avec Actix Web, en adoptant une approche TDD pour une conception modulaire et testable."
+date: 2022-02-18
+tags:
+  - rust
+  - actix-web
+  - architecture hexagonale
+  - tdd
+  - backend
+
+language: fr
+slug: rust-actix-tdd-architecture-hexagonale-part-1
+author: Hugo Mufraggi
+readingTime: 7
+cover: /1_tQm9frXpyCwmWU_AsysuWQ.webp
+related: 
+  - tests-middleware-actix
+  - guide-debutant-rust
+---
+
 # Rust Actix TDD Architecture Hexagonale Part 1 page
 
 # Intro
