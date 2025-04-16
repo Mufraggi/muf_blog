@@ -11,12 +11,20 @@ WORKDIR /src
 # Build
 FROM base as build
 
-COPY --link package.json package-lock.json .
-RUN npm install
+# Copy package.json and pnpm-lock.yaml
+COPY --link pnpm-lock.yaml package.json ./
 
+# Install pnpm if not already installed
+RUN npm install -g pnpm
+
+# Install dependencies
+RUN pnpm install
+
+# Copy the rest of the application code
 COPY --link . .
 
-RUN npm run build
+# Build the Nuxt.js application
+RUN pnpm run build
 
 # Run
 FROM base
@@ -24,7 +32,9 @@ FROM base
 ENV PORT=$PORT
 ENV NODE_ENV=production
 
+# Copy the build output from the build stage
 COPY --from=build /src/.output /src/.output
+
 # Optional, only needed if you rely on unbundled dependencies
 # COPY --from=build /src/node_modules /src/node_modules
 
