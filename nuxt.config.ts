@@ -5,14 +5,15 @@ export default defineNuxtConfig({
         compatibilityVersion: 4
     },
     modules: [
-      '@nuxt/ui',
-      '@nuxtjs/seo',
-      '@nuxt/content',
-      '@nuxt/eslint',
-      '@nuxt/image',
-      'nuxt-og-image',
-      '@nuxt/icon',
-      '@nuxtjs/robots',
+        '@nuxtjs/robots',
+        '@nuxt/ui',
+        '@nuxtjs/seo',
+        '@nuxt/content',
+        '@nuxt/eslint',
+        '@nuxt/image',
+        'nuxt-og-image',
+        '@nuxt/icon',
+
     ],
     css: ['~/assets/style/main.css'],
     image: {
