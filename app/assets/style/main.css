@@ -64,5 +64,20 @@
         --ring: 0 0% 83.1%;
     }
 }
+.prose h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333; /* ou votre couleur préférée */
+}
+
+.prose h2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #000000;
+}
 
 

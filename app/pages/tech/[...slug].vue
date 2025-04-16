@@ -11,8 +11,7 @@ const {data: page} = await useAsyncData(route.path, () => {
 
     <HeaderArticle :post="page"/>
 
-    <!-- Contenu de l'article -->
-    <div class="prose prose-lg max-w-none">
+    <div class="prose prose-lg dark:prose-invert max-w-none">
       <ContentRenderer :value="page"/>
     </div>
   </div>
