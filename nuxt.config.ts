@@ -5,6 +5,7 @@ export default defineNuxtConfig({
         compatibilityVersion: 4
     },
     modules: [
+        '@nuxtjs/tailwindcss',
         '@nuxtjs/robots',
         '@nuxtjs/seo',
         '@nuxt/content',
@@ -14,13 +15,6 @@ export default defineNuxtConfig({
         '@nuxt/icon',
 
     ],
-    tailwindcss: {
-        cssPath: [`~/assets/style/main.css`, { injectPosition: "first" }],
-        config: {},
-        viewer: true,
-        exposeConfig: false,
-    },
-    css: ['~/assets/style/main.css'],
     image: {
         inject: true,
         provider: 'ipx',
