@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     },
     modules: [
         '@nuxtjs/robots',
-        '@nuxt/ui',
         '@nuxtjs/seo',
         '@nuxt/content',
         '@nuxt/eslint',
