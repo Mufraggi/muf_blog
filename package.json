@@ -17,17 +17,17 @@
     "@nuxt/fonts": "0.11.1",
     "@nuxt/icon": "1.12.0",
     "@nuxt/image": "1.10.0",
+    "@nuxtjs/plausible": "1.2.0",
     "@nuxtjs/robots": "5.2.10",
     "@nuxtjs/seo": "^3.0.2",
+    "@nuxtjs/tailwindcss": "latest",
     "@unhead/vue": "^2.0.0-rc.1",
     "eslint": "^9.0.0",
     "nuxt": "^3.16.2",
     "nuxt-og-image": "5.1.1",
     "unstorage": "^1.0.0",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0",
-    "@nuxtjs/tailwindcss": "latest"
-
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "6.13.2"

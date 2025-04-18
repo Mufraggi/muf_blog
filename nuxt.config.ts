@@ -5,20 +5,24 @@ export default defineNuxtConfig({
         compatibilityVersion: 4
     },
     modules: [
-        '@nuxtjs/tailwindcss',
-        '@nuxtjs/robots',
-        '@nuxtjs/seo',
-        '@nuxt/content',
-        '@nuxt/eslint',
-        '@nuxt/image',
-        'nuxt-og-image',
-        '@nuxt/icon',
-
+      '@nuxtjs/tailwindcss',
+      '@nuxtjs/robots',
+      '@nuxtjs/seo',
+      '@nuxt/content',
+      '@nuxt/eslint',
+      '@nuxt/image',
+      'nuxt-og-image',
+      '@nuxt/icon',
+      '@nuxtjs/plausible',
     ],
     image: {
         inject: true,
         provider: 'ipx',
 
+    },
+    plausible: {
+        // Prevent tracking on localhost
+        ignoredHostnames: ['localhost'],
     },
     ogImage: {
         zeroRuntime: true
