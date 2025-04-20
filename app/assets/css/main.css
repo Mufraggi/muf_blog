@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@nuxt/ui";
+@import "../../../node_modules/.pnpm/@nuxt+ui@3.0.2_embla-carousel@8.6.0_typescript@5.8.3_vite@6.3.2_zod@3.24.3/node_modules/@nuxt/ui/dist/module.d.ts";
 
 @layer base {
     :root {
