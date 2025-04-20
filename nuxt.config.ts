@@ -20,7 +20,7 @@ export default defineNuxtConfig({
         provider: 'ipx',
 
     },
-    css: ['~/assets/style/main.css'],
+    css: ['./app/assets/style/main.css'],
     plausible: {
         // Prevent tracking on localhost
         ignoredHostnames: ['localhost'],
