@@ -1,7 +1,7 @@
 ---
 title: "Rust Actix TDD architecture hexagonale part 1"
 description: "Introduction à l'architecture hexagonale en Rust avec Actix Web, en adoptant une approche TDD pour une conception modulaire et testable."
-date: 2022-02-18
+date: 2022-02-19
 tags:
   - rust
   - actix-web
